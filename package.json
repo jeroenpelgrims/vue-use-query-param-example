@@ -11,7 +11,7 @@
   "dependencies": {
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue-use-query-param": "^0.0.0"
+    "vue-use-query-param": "latest"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
