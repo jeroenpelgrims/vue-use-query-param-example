@@ -11,9 +11,9 @@ const var3 = useQueryParam("var3", StringParam);
 <template>
   <Example title="Setting multiple query params simultaneously">
     <pre>
-      The value of <strong>var1</strong> is '{{ var1 }}'
-      The value of <strong>var2</strong> is '{{ var2 }}'
-      The value of <strong>var3</strong> is '{{ var3 }}'
+      The value of <strong>var1</strong> is <span v-if="var1 !== null">'{{ var1 }}'</span><span v-else>null</span>
+      The value of <strong>var2</strong> is <span v-if="var2 !== null">'{{ var2 }}'</span><span v-else>null</span>
+      The value of <strong>var3</strong> is <span v-if="var3 !== null">'{{ var3 }}'</span><span v-else>null</span>
     </pre>
 
     <Actions>
@@ -39,7 +39,7 @@ const var3 = useQueryParam("var3", StringParam);
       }">
         Set all variables to null
       </button>
-      
+
     </Actions>
   </Example>
 </template>
