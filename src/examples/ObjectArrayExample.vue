@@ -5,6 +5,13 @@ import Example from "../components/Example.vue";
 
 type Person = { id: number; name: string };
 const people = useQueryParam("people", ArrayParam(ObjectParam<Person>()));
+
+function setPeople() {
+  people.value = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" }
+  ];
+}
 </script>
 
 <template>
@@ -14,9 +21,7 @@ const people = useQueryParam("people", ArrayParam(ObjectParam<Person>()));
     <pre v-else>null</pre>
 
     <Actions>
-      <button @click="() => {
-      people = [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }]
-    }">
+      <button @click="setPeople">
         Set the array to contain some people
       </button>
       <button @click="() => (people = null)">

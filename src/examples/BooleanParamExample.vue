@@ -13,13 +13,13 @@ const boolvar = useQueryParam("boolvar", BooleanParam);
     <pre v-else>null</pre>
 
     <Actions>
-      <button @click="() => (boolvar = true)">
+      <button @click="boolvar = true">
         boolvar = true
       </button>
-      <button @click="() => (boolvar = false)">
+      <button @click="boolvar = false">
         boolvar = false
       </button>
-      <button @click="() => (boolvar = null)">
+      <button @click="boolvar = null">
         boolvar = null
       </button>
     </Actions>

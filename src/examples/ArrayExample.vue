@@ -4,6 +4,12 @@ import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
 const numbers = useQueryParam("numbers", ArrayParam(NumberParam));
+
+function addNumber() {
+  const value = numbers.value ?? [];
+  numbers.value = [...value, value.length];
+
+}
 </script>
 
 <template>
@@ -13,10 +19,7 @@ const numbers = useQueryParam("numbers", ArrayParam(NumberParam));
     <pre v-else>null</pre>
 
     <Actions>
-      <button @click="() => {
-      const value = numbers ?? [];
-      numbers = [...value, value.length];
-    }">
+      <button @click="addNumber">
         Add a value to numbers
       </button>
       <button @click="() => (numbers = null)">

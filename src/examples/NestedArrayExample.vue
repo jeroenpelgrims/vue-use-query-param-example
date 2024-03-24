@@ -4,6 +4,10 @@ import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
 const matrix = useQueryParam("matrix", ObjectParam<number[][]>());
+
+function setMatrix() {
+  matrix.value = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+}
 </script>
 
 <template>
@@ -15,9 +19,7 @@ const matrix = useQueryParam("matrix", ObjectParam<number[][]>());
     <pre v-else>null</pre>
 
     <Actions>
-      <button @click="() => {
-      matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-    }">
+      <button @click="setMatrix">
         Set the matrix to a value
       </button>
       <button @click="() => (matrix = null)">

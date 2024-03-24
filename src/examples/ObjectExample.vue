@@ -17,10 +17,10 @@ const obj = useQueryParam("obj", ObjectParam<MyObject>());
     <pre v-else>null</pre>
 
     <Actions>
-      <button @click="() => (obj = { foo: 'pi', bar: 3.1415 })">
+      <button @click="obj = { foo: 'pi', bar: 3.1415 }">
         Set obj to a value
       </button>
-      <button @click="() => (obj = null)">
+      <button @click="obj = null">
         obj = null
       </button>
     </Actions>
