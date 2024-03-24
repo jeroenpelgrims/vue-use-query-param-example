@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import CurrentUrl from "./components/CurrentUrl.vue";
+import BooleanParamExample from "./examples/BooleanParamExample.vue";
 import BulkExample from "./examples/BulkExample.vue";
+import DateParamExample from "./examples/DateParamExample.vue";
 import InputExample from "./examples/InputExample.vue";
 import NumberParamExample from "./examples/NumberParamExample.vue";
 import StringParamExample from "./examples/StringParamExample.vue";
@@ -14,6 +16,8 @@ import StringParamExample from "./examples/StringParamExample.vue";
     <StringParamExample />
     <InputExample />
     <NumberParamExample />
+    <BooleanParamExample />
+    <DateParamExample />
     <BulkExample />
   </div>
 </template>

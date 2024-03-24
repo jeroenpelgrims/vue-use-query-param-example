@@ -10,7 +10,7 @@ const foo = useQueryParam("foo", StringParam);
   <Example title="<input v-model> ">
     The value of <strong>foo</strong> is:
     <pre v-if="foo !== null">'{{ foo }}'</pre>
-    <pre v-else>undefined</pre>
+    <pre v-else>null</pre>
 
     <Actions>
       <input v-model="foo" />
