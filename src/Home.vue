@@ -5,6 +5,7 @@ import BulkExample from "./examples/BulkExample.vue";
 import DateParamExample from "./examples/DateParamExample.vue";
 import InputExample from "./examples/InputExample.vue";
 import NumberParamExample from "./examples/NumberParamExample.vue";
+import ObjectExample from "./examples/ObjectExample.vue";
 import StringParamExample from "./examples/StringParamExample.vue";
 </script>
 
@@ -19,6 +20,12 @@ import StringParamExample from "./examples/StringParamExample.vue";
     <BooleanParamExample />
     <DateParamExample />
     <BulkExample />
+    <ObjectExample />
+    <!--
+    TODO:
+    Array (normal, nested)
+    withDefault
+    -->
   </div>
 </template>
 
