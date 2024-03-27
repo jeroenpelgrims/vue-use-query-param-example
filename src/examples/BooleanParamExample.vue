@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { BooleanParam, useQueryParam } from "vue-use-query-param";
+import { booleanParam, useQueryParam } from "vue-use-query-param";
 import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
-const boolvar = useQueryParam("boolvar", BooleanParam);
+const boolvar = useQueryParam("boolvar", booleanParam());
 </script>
 
 <template>
   <Example title="Using boolean query parameters">
     The value of <strong>boolvar</strong> is
-    <pre v-if="boolvar !== null">{{ boolvar ? 'true' : 'false' }}</pre>
-    <pre v-else>null</pre>
+    <pre v-if="boolvar !== undefined">{{ boolvar ? 'true' : 'false' }}</pre>
+    <pre v-else>undefined</pre>
 
     <Actions>
       <button @click="boolvar = true">
@@ -19,8 +19,8 @@ const boolvar = useQueryParam("boolvar", BooleanParam);
       <button @click="boolvar = false">
         boolvar = false
       </button>
-      <button @click="boolvar = null">
-        boolvar = null
+      <button @click="boolvar = undefined">
+        boolvar = undefined
       </button>
     </Actions>
   </Example>

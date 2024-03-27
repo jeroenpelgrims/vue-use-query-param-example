@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { StringParam, useQueryParam } from "vue-use-query-param";
+import { stringParam, useQueryParam } from "vue-use-query-param";
 import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
-const foo = useQueryParam("foo", StringParam);
+const foo = useQueryParam("foo", stringParam());
 </script>
 
 <template>
   <Example title="A query param of type string">
     The value of <strong>foo</strong> is:
-    <pre v-if="foo !== null">'{{ foo }}'</pre>
-    <pre v-else>null</pre>
+    <pre v-if="foo !== undefined">'{{ foo }}'</pre>
+    <pre v-else>undefined</pre>
 
     <Actions>
       <button @click="foo = 'Example text'">
@@ -19,8 +19,8 @@ const foo = useQueryParam("foo", StringParam);
       <button @click="foo = ''">
         foo.value = ''
       </button>
-      <button @click="foo = null">
-        foo.value = null
+      <button @click="foo = undefined">
+        foo.value = undefined
       </button>
     </Actions>
   </Example>

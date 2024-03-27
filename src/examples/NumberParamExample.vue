@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { NumberParam, useQueryParam } from "vue-use-query-param";
+import { numberParam, useQueryParam } from "vue-use-query-param";
 import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
-const someNumber = useQueryParam("someNumber", NumberParam);
+const someNumber = useQueryParam("someNumber", numberParam());
 </script>
 
 <template>
   <Example title="A query param of type number">
     The value of <strong>someNumber</strong> is:
-    <pre v-if="someNumber !== null">{{ someNumber }}</pre>
-    <pre v-else>null</pre>
+    <pre v-if="someNumber !== undefined">{{ someNumber }}</pre>
+    <pre v-else>undefined</pre>
 
     <p>(someNumber ?? 0) * 2 = {{ (someNumber ?? 0) * 2 }}</p>
 
@@ -24,8 +24,8 @@ const someNumber = useQueryParam("someNumber", NumberParam);
       <button @click="someNumber = 0">
         someNumber = 0
       </button>
-      <button @click="someNumber = null">
-        someNumber = null
+      <button @click="someNumber = undefined">
+        someNumber = undefined
       </button>
     </Actions>
   </Example>

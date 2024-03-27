@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { DateParam, useQueryParam } from "vue-use-query-param";
+import { DateParamType, dateParam, useQueryParam } from "vue-use-query-param";
 import Actions from "../components/Actions.vue";
 import Example from "../components/Example.vue";
 
-const selectedDate = useQueryParam("selectedDate", DateParam);
+const selectedDate = useQueryParam("selectedDate", dateParam({ dateType: DateParamType.Date }));
 
 function setDate(e: Event) {
   const target = e.target as HTMLInputElement;
-  const value = target.valueAsDate;
+  const value = target.valueAsDate ?? undefined;
   selectedDate.value = value;
 }
 </script>
@@ -15,11 +15,11 @@ function setDate(e: Event) {
 <template>
   <Example title="Using boolean query parameters">
     The value of <strong>selectedDate</strong> is
-    <pre>{{ selectedDate ?? 'null' }}</pre>
+    <pre>{{ selectedDate ?? 'undefined' }}</pre>
 
     <Actions>
       <input type="date" v-bind="selectedDate" @change="setDate" />
-      <button @click="selectedDate = null">Clear</button>
+      <button @click="selectedDate = undefined">Clear</button>
     </Actions>
   </Example>
 </template>
