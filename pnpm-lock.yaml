@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.3.0
     version: 4.3.0(vue@3.4.21)
   vue-use-query-param:
-    specifier: latest
-    version: link:../vue-use-query-param
+    specifier: 0.0.1-alpha.11
+    version: 0.0.1-alpha.11(vue-router@4.3.0)(vue@3.4.21)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -825,6 +825,16 @@ packages:
       semver: 7.6.0
       typescript: 5.4.3
     dev: true
+
+  /vue-use-query-param@0.0.1-alpha.11(vue-router@4.3.0)(vue@3.4.21):
+    resolution: {integrity: sha512-Wehua9/zkohY/EcjKNDNuqRSFjrQZIXnX9AvzS1bdz4UB8NG5PI/kOpSB7CdMwoNxOn326af/yBly32B3uJJbw==}
+    peerDependencies:
+      vue: ^3
+      vue-router: ^4
+    dependencies:
+      vue: 3.4.21(typescript@5.4.3)
+      vue-router: 4.3.0(vue@3.4.21)
+    dev: false
 
   /vue@3.4.21(typescript@5.4.3):
     resolution: {integrity: sha512-5hjyV/jLEIKD/jYl4cavMcnzKwjMKohureP8ejn3hhEjwhWIhWeuzL2kJAjzl/WyVsgPY56Sy4Z40C3lVshxXA==}
